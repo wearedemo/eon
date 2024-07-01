@@ -57,20 +57,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Adaugă stilurile pentru butonul scroll-to-bottom */
-.scroll-to-bottom-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.scroll-to-bottom-button:hover {
-  background-color: #0056b3;
-}

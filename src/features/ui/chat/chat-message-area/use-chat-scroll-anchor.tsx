@@ -39,7 +39,13 @@ export const useChatScrollAnchor = (props: {
       }
     };
 
-    const observer = new MutationObserver(handleAutoScroll);
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList' && autoScroll) {
+          handleAutoScroll();
+        }
+      });
+    });
 
     if (ref.current) {
       observer.observe(ref.current, { childList: true, subtree: true });

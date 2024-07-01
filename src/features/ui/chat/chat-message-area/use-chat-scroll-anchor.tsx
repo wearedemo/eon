@@ -5,7 +5,6 @@ export const useChatScrollAnchor = (props: {
   ref: RefObject<HTMLDivElement>;
 }) => {
   const { ref } = props;
-
   const { autoScroll } = useChat();
 
   // This effect handles the user's scroll event
@@ -20,11 +19,15 @@ export const useChatScrollAnchor = (props: {
       }
     };
 
-    ref.current?.addEventListener("scroll", handleUserScroll);
+    if (ref.current) {
+      ref.current.addEventListener("scroll", handleUserScroll);
+    }
 
     // Cleanup: remove the event listener when the component unmounts or the dependencies change
     return () => {
-      ref.current?.removeEventListener("scroll", handleUserScroll);
+      if (ref.current) {
+        ref.current.removeEventListener("scroll", handleUserScroll);
+      }
     };
   }, [ref]);
 

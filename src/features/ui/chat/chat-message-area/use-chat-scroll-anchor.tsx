@@ -56,4 +56,11 @@ export const useChatScrollAnchor = (props: {
       observer.disconnect();
     };
   }, [ref, autoScroll]);
+
+  // Force scroll to bottom on autoScroll change
+  useEffect(() => {
+    if (ref.current && autoScroll) {
+      ref.current.scrollTop = ref.current.scrollHeight;
+    }
+  }, [autoScroll]);
 };

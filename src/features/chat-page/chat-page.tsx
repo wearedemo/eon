@@ -41,10 +41,6 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
 
   useChatScrollAnchor({ ref: current });
 
-  const scrollToBottom = () => {
-    current.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <main className="flex flex-1 relative flex-col">
       <ChatHeader
@@ -77,9 +73,6 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
         </ChatMessageContentArea>
       </ChatMessageContainer>
       <ChatInput />
-      <button onClick={scrollToBottom} className="scroll-to-bottom-button">
-        Scroll to Bottom
-      </button>
     </main>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import { AddExtension } from "@/features/extensions-page/add-extension/add-new-extension";
 import { ExtensionCard } from "@/features/extensions-page/extension-card/extension-card";
 import { ExtensionModel } from "@/features/extensions-page/extension-services/models";

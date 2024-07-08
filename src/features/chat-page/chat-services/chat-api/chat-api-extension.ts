@@ -22,7 +22,7 @@ export const ChatApiExtensions = async (props: {
     {
       model: "",
       stream: true,
-      temperature: 0.4, // Set your desired temperature here
+      temperature: 0.2, // Set your desired temperature here
       messages: [
         {
           role: "system",

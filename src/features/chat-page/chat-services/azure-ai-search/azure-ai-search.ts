@@ -420,7 +420,7 @@ const CreateSearchIndex = async (): Promise<
           type: "Edm.String",
         },
         {
-          name: "embedding",
+          name: "content",
           type: "Collection(Edm.Single)",
           searchable: true,
           filterable: false,
